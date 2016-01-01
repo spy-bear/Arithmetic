@@ -105,6 +105,8 @@ namespace 四则运算
                 {
                     ResultForm resultform = new ResultForm(data.CorrectCount, data.Count, data.calculateCorrectRate);
                     resultform.ShowDialog();
+                    textBox3.Enabled = false;   // 输入框无法继续输入 
+                    startBtn.Enabled = true;
                     break;
                 }
                 else continue;

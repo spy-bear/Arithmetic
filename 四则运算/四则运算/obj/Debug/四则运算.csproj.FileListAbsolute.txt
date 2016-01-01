@@ -9,3 +9,14 @@ c:\users\jerry\documents\visual studio 2015\Projects\四则运算\四则运算\o
 c:\users\jerry\documents\visual studio 2015\Projects\四则运算\四则运算\obj\Debug\四则运算.exe
 c:\users\jerry\documents\visual studio 2015\Projects\四则运算\四则运算\obj\Debug\四则运算.pdb
 C:\Users\Jerry\Documents\Visual Studio 2015\Projects\四则运算\四则运算\obj\Debug\四则运算.ResultForm.resources
+C:\Users\Jerry\Desktop\四则运算\bin\Debug\四则运算.exe.config
+C:\Users\Jerry\Desktop\四则运算\obj\Debug\四则运算.exe
+C:\Users\Jerry\Desktop\四则运算\obj\Debug\四则运算.pdb
+C:\Users\Jerry\Desktop\四则运算\bin\Debug\四则运算.exe
+C:\Users\Jerry\Desktop\四则运算\bin\Debug\四则运算.pdb
+C:\Users\Jerry\Desktop\四则运算\obj\Debug\四则运算.csprojResolveAssemblyReference.cache
+C:\Users\Jerry\Desktop\四则运算\obj\Debug\四则运算.Form1.resources
+C:\Users\Jerry\Desktop\四则运算\obj\Debug\四则运算.introduceForm.resources
+C:\Users\Jerry\Desktop\四则运算\obj\Debug\四则运算.Properties.Resources.resources
+C:\Users\Jerry\Desktop\四则运算\obj\Debug\四则运算.ResultForm.resources
+C:\Users\Jerry\Desktop\四则运算\obj\Debug\四则运算.csproj.GenerateResource.Cache
