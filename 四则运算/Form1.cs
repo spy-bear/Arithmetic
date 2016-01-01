@@ -34,7 +34,7 @@ namespace 四则运算
         }
         private void TimeControl()
         {
-            int i = 5;
+            int i = 60;//更改答题限制时间
             int sleeptime = 1000;
             threadControl = true;
             try
