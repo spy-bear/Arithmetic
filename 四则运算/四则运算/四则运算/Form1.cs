@@ -34,7 +34,7 @@ namespace 四则运算
         }
         private void TimeControl()
         {
-            int i = 60;//更改答题限制时间
+            int i = 60;
             int sleeptime = 1000;
             threadControl = true;
             try
@@ -105,8 +105,7 @@ namespace 四则运算
                 {
                     ResultForm resultform = new ResultForm(data.CorrectCount, data.Count, data.calculateCorrectRate);
                     resultform.ShowDialog();
-                    textBox3.Enabled = false;   // 输入框无法继续输入 
-                    startBtn.Enabled = true;
+                    textBox3.Enabled = false;
                     break;
                 }
                 else continue;
@@ -116,46 +115,52 @@ namespace 四则运算
         // 当用户输入一个数据 系统立即对结果进行处理，并立刻产生一组新的数据
         private void TextBox3_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13 ) {
-                data.OperatorType = operatorlabel.Text;   // 获取运算符
-                data.Num1 = Convert.ToInt32(textBox1.Text);  // 读取第一个操作数
-                data.Num2 = Convert.ToInt32(textBox2.Text);  // 读取第二个操作数
-                data.Count++;
-                double result = 0;    // 使用除法时数据是 浮点型
-                switch (operatorlabel.Text)
-                {
-                    case "+":
-                        result = Data.addnumbers(data.Num1, data.Num2);
-                        break;
-                    case "-":
-                        result = Data.subnumbers(data.Num1, data.Num2);
-                        break;
-                    case "*":
-                        result = Data.mulnumbers(data.Num1, data.Num2);
-                        break;
-                    case "/":
-                        result = Data.divnumbers(data.Num1, data.Num2);
-                        break;
-                }
-                if (operatorlabel.Text == "/")
-                {
-                    if (result == Convert.ToDouble(textBox3.Text))
-                    {
-                        data.CorrectCount++;
-                    }
-                    else data.ErrorCount++;
-                }
-                else
-                {
-                    if ((int)result == Convert.ToInt32(textBox3.Text))
-                    {
-                        data.CorrectCount++;
-                    }
-                    else data.ErrorCount++;
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar  != '.')
+            {
+                e.Handled = true;
 
+                if (e.KeyChar == 13)
+                {
+                    data.OperatorType = operatorlabel.Text;   // 获取运算符
+                    data.Num1 = Convert.ToInt32(textBox1.Text);  // 读取第一个操作数
+                    data.Num2 = Convert.ToInt32(textBox2.Text);  // 读取第二个操作数
+                    data.Count++;
+                    double result = 0;    // 使用除法时数据是 浮点型
+                    switch (operatorlabel.Text)
+                    {
+                        case "+":
+                            result = Data.addnumbers(data.Num1, data.Num2);
+                            break;
+                        case "-":
+                            result = Data.subnumbers(data.Num1, data.Num2);
+                            break;
+                        case "*":
+                            result = Data.mulnumbers(data.Num1, data.Num2);
+                            break;
+                        case "/":
+                            result = Data.divnumbers(data.Num1, data.Num2);
+                            break;
+                    }
+                    if (operatorlabel.Text == "/")
+                    {
+                        if (result == Convert.ToDouble(textBox3.Text))
+                        {
+                            data.CorrectCount++;
+                        }
+                        else data.ErrorCount++;
+                    }
+                    else
+                    {
+                        if ((int)result == Convert.ToInt32(textBox3.Text))
+                        {
+                            data.CorrectCount++;
+                        }
+                        else data.ErrorCount++;
+
+                    }
+                    textBox3.Text = "";
+                    setTextboxnumbers();
                 }
-                textBox3.Text = "";
-                setTextboxnumbers();
             }
         }
         public void setTextboxnumbers()
